@@ -1,4 +1,6 @@
 var express = require('express');
+var fs = require('fs');
+
 
 var buff = fs.readFileSync("/home/ubuntu/bitstarter/index.html")
 
