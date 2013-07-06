@@ -97,10 +97,10 @@ if(require.main == module) {
 
 
 
-	var pchecks = program.checks
+/*	var pchecks = program.checks
     var checkJson = checkHtmlFile(temp, pchecks);
     var outJson = JSON.stringify(checkJson, null, 4);
-    console.log(outJson);
+    console.log(outJson);*/
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
