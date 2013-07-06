@@ -25,7 +25,7 @@ var fs = require('fs');
 var utils = require('util')
 var program = require('commander');
 var cheerio = require('cheerio');
-var rest = require('restler')
+var rest = require('restler');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
 
@@ -64,36 +64,41 @@ var clone = function(fn) {
 };
 
 
-var responseFun = function(result){fs.writeFileSync('tempfile.html', result)}
+var checksResult = function(html, checks){
+	console.log("checking html file");
+	var checkJson = checkHtmlFile(html, checks);
+	
+	console.log("converting to string");
+        var outJson = JSON.stringify(checkJson, null, 4);
+
+	console.log("output results");
+	 console.log(outJson);
+};
+
 
 
 if(require.main == module) {
-    program
-        .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+   program
+	.option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
         .option('-f, --file [html_file]', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
 	.option('-u, --url [url]', 'direction to file')
         .parse(process.argv);
 
-
-	if(program.file){
-	console.log("BLUNT path")
-	var pfile = program.file
-        var pchecks = program.checks
-        var checkJson = checkHtmlFile(temp, pchecks);
-        var outJson = JSON.stringify(checkJson, null, 4);
-        console.log(outJson);
+        if(program.url){
+        	console.log('URL based');
+        	rest.get(program.url).on('complete',
+			function(result){
+			var html = result;
+			checksResult(html, program.checks);
+        		}
+		);
 	}
 
+	else if(program.file){
+		console.log("file path based");
+	 	checksResult(program.file, program.checks);
+	};
 
-	if(program.url){
-	console.log('URL')
-	var temp = rest.get(program.url).on('complete', responseFun )
-        var pchecks = program.checks
-        var checkJson = checkHtmlFile('tempfile.html', pchecks);
-        var outJson = JSON.stringify(checkJson, null, 4);
-        console.log(outJson);
-
-	}
 
 
 
@@ -103,4 +108,4 @@ if(require.main == module) {
     console.log(outJson);*/
 } else {
     exports.checkHtmlFile = checkHtmlFile;
-}
+};
