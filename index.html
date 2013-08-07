@@ -1,236 +1,304 @@
+
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<meta charset="utf-8">
-	<title>A Fantastic Medical App</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
-	<link rel="stylesheet" href="http://netdna.boostrapcdn.com/font-awesome/3.0.2/css/font-awsome.css">
-	<link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
-	<script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
-	<script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,500italic,700italic" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
-	<style type="text/css">
+  <head>
+    <meta charset="utf-8">
+    <title>My First Bitstarter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
+          rel="stylesheet" type="text/css">
+    <style type="text/css">
 
-	/* destkop*/
-	@media (min-width: 980px) {
-                body {
-                padding-top: 60px;
-                }
-                .linediv-l {
-                border-right: 1px white solid;
-                }
-                .linediv-r {
-                border-left: 1px white solid;
-                }
-               }
+      /* Large desktop */
+      @media (min-width: 980px) { 
+        body {
+         padding-top: 60px;
+        }
+       .linediv-l {
+         border-right: 1px white solid;
+        }
+       .linediv-r {
+         border-left: 1px white solid;
+       }
+      }
 
-	/* Landscape phones and down */
-	@media (min-width: 480px){
-		body{
-		padding: 2.5% 10%;
-		}
-		.linediv-l {
-		border-right: 1px white solid;
-		}
-		.linediv-r{
-		border-left: 1px white solid;
-		}
-		}
+      /* Landscape phones and down */
+      @media (max-width: 480px) { 
+       .copy {
+         padding: 2.5% 10%;
+       }
+       .linediv-l {
+         border-bottom: 1px white solid;
+       }
+       .linediv-r {
+         border-top: 1px white solid;
+       }
+      }
 
-	
+      /* All form factors */
 
+      /* Main body and headings */
+      body{
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+      .heading, .subheading {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        text-align: center;
+      }
+      p.lead {
+        padding-top: 1.5%;
+        font-size: 24px;
+        line-height: 30px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 24px;
+      }
 
-	/* Main body and headings */
-	body{
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	}
-	.heading, .subheading {
-	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-	text-align: center;
-	}
-	p.lead{
-	padding-top: 1.5%;
-	font-size: 24px;
-	line-height: 30px;
-	}
-	p{
-	font-size: 18px;
-	line-height: 24px;
-	}
+      /* Video pitch and Action */
+      .pitch {
+        padding: 2.5% 0%;
+      }
+      .order {
+        padding: 2% 0%;
+      }
+      .actions {
+        background-color: #343434;
+        padding: 3% 0%;
+      }
+      .video, .thermometer, .order, .social, .statistics {
+        text-align: center;
+      }
+      .statistics h3, .statistics p {
+        color: white;
+      }
 
+      /* Marketing Copy and Footer */
+      .copy {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        text-align: justify;
+      }
+      .asset {
+        padding: 2.5% 0%;
+      }
+      .footer {
+        color: #cccccc;
+        text-align: center;
+      }
+      .footer p {
+        font-size: 11px;
+      }
+      .footer a {
+        color: #ccccff;
+      }
+    </style>
+  </head>
+  <body>
 
-	/* video petich and action */
-	.pitch{
-	padding: 2.5% 0%;
-	}
-	.order{
-	padding: 2% 0%;
-	}
-	.actions{
-	background-color: #343434;
-	padding: 3% 0%;	
-	}
-	.video, .thermometer, .order, .social, .statistics {
-	text-align: center;
-	}
-	.statistcs h3, .statistics p {
-	color: white
-	}
+    <!-- Mobile-friendly navbar adapted from example. -->
+    <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar"
+                  data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Bitstarter</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-	/* Marketing copu and footer */
-	.copy {
-	padding-top: 2.5%
-	padding-bottom: 2.5%
-	text-align: justify;
-	}
-	.asset{
-	padding: 2.5% 0%;
-	}
-	.footer{
-	color: #cccccc;
-	text-align: center;
-	}
-	.footer p{
-	font-size: 11px;
-	}
-	.footer a{
-	color: #ccccff;
-	}
-	</style>
-	</head>
+    <!-- We use row-fluid inside containers to achieve a resizable layout. -->
+    <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+    <!-- http://stackoverflow.com/a/12270322 -->
+    <div class="container">
+      <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
+      <!-- www.google.com/fonts/specimen/Ubuntu -->
+      <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
+      <div class="row-fluid heading">
+        <div class="span12">
+          <h1>Product: Development Version</h1>
+        </div>
+      </div> 
+      <div class="row-fluid subheading">
+        <div class="span12">
+          <!-- Special typography from Bootstrap for lead paragraph. -->
+          <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
+          <p class="lead">One sentence description.</p>
+        </div>
+      </div>
+      <div class="row-fluid pitch">
+        <div class="span5 offset1 video">
+          <img class="img-polaroid" alt="Placeholder" src="http://imgur.com/R6tD0KI.png">
+        </div>
 
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-	  		<div class="container">
-	   			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-		      		<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="brand" href="#">Bitstarter</a>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
-		   				<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-						</ul>
-					</div>
-			</div>
-		</div>
-	</div>
+        <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
+        <div class="span5 actions">
+          <div class="row-fluid">
+          <div class="span8 offset2">
+            <div class="row-fluid statistics">
+              <div class="span4">
+                <!-- linediv-l and linediv-r give dividing lines that look
+                different in horizontal and vertical layouts, illustrating
+                media queries. -->
+                <div class="linediv-l">
+                <h3>1000</h3> <p>backers</p>
+                </div>
+              </div>
+              <div class="span4">
+                <div class="linediv-c">
+                  <h3>$6000</h3> <p>of $10,000</p>
+                </div>
+              </div>
+              <div class="span4">
+                <div class="linediv-r">
+                <h3>10</h3> <p>days left</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row-fluid">
+          <div class="span10 offset1">
+            <!-- Bootstrap progress bar -->
+            <!-- http://twitter.github.io/bootstrap/components.html#progress -->
+            <div class="thermometer progress active">
+              <div class="bar bar-success" style="width: 60%;"></div>
+              <div class="bar bar-warning" style="width: 40%;"></div>
+            </div>
+          </div>
+          </div>
+          <div class="row-fluid">
+          <div class="span6 offset3 order">
+            <!-- Standard Bootstrap button. -->
+            <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
+            <button class="btn btn-success btn-large">Preorder</button>
+          </div>
+          </div>
+          <div class="row-fluid">
+          <div class="span8 offset2 social">
+            <!-- Social buttons are not included in default Bootstrap. -->
+            <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
+            <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
+            <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
 
+      <!-- Beyond this part the marketing copy begins. -->
+      <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
+      <!-- http://twitter.github.io/bootstrap/base-css.html#images -->
+      <!-- http://placehold.it -->
+      <div class="row-fluid section1">
+        <div class="span5 offset1 asset">
+          <img class="img-polaroid"  alt="Placeholder" src="http://imgur.com/R6tD0KI.png">
+        </div>
+        <div class="span5 copy">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
+            mollis justo velit at nunc. Fusce nec egestas sem. Donec
+            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
+            volutpat lorem ut congue malesuada. In facilisis scelerisque
+            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
+            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
+            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
+            rutrum, nunc leo tempus nisl, eu mollis justo velit at
+            nunc. Fusce nec egestas sem. Donec fringilla.
+          </p>
+        </div>
+      </div>
 
-	<div class="container">
-		<div class="row-fluid heading">
-			<div class="span12">
-			<h1><Product</h1>
-		</div>
-	</div>
-	<div class="row-fluid subheading">
-		<div class="span12">
-		<p class="lead">This is a sentence</p>
-		</div>
-	</div>
+      <div class="row-fluid section2">
+        <div class="span5 offset1 copy copy-right">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
+            mollis justo velit at nunc. Fusce nec egestas sem. Donec
+            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
+            volutpat lorem ut congue malesuada. In facilisis scelerisque
+            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
+            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
+            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
+            rutrum, nunc leo tempus nisl, eu mollis justo velit at
+            nunc. Fusce nec egestas sem. Donec fringilla.
+          </p>
+        </div>
+        <div class="span5 asset">
+          <img class="img-polaroid"  alt="Placeholder" src="http://i.imgur.com/yshUXYy.png">
+        </div>
+      </div>
 
-	<div class="row-fluid pitch">	
-		<div class="span5 offset1 video">
- 	   	<img class=img-polaroid" src="http://imgur.com/R6tD0KI.png">
-	  	</div>
+      <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
+      <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
+      <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
+      <div class="row-fluid faq">
+          <div class="span10 offset1">
+            <h3>FAQ</h3>
+            <div class="accordion" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseOne">
+                    What does FAQ stand for?
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    Frequently Asked Question.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseTwo">
+                      What's a Frequently Asked Question?
+                  </a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    A question which is commonly asked by users.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-	<div class="span5 actions">
-		<div class="span8 offset2">
-	    		<div class="statistcs">
-	       			<div class="span4">
-					<div class="linediv-l">
-					<h3>1000</h3> <p>backers</p>
-					</div>
-				</div>
-				<div class="span4">
-					<div class="linediv-c">
-					<h3>$6000</h3><p>of $10000</p>
-					</div>
-				</div>
-				<div class="span4">
-					<div class="linediv-r">
-					<h3>10</h3><p>days left</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+      </div>
 
-	<div class="span10 offset1">
-		<div class="thermometer progress active">
-			<div class="bar bar-success" style="width: 60%;"></div>
-			<div class="bar bar-warning" style="width: 40%;"></div>
-		</div>
-	</div>
-
-	<div class="span6 offset3 order">
-		<button class="btn btn-success btn-large">Click the Button</button>
-	</div>
-
-	<div class="span8 offset2 social">
-		<button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
-		<button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
-	</div>
-	
-</div>
-</div>
-</div>
-
-
-	<div class="row-fluid section1">
-		<div class="span5 offset1 asset">
-		<img class="img--polaroid" src="http://i.imgur.com/yshUXYy.png">
-	</div>
-
-	<div class="span5 copy">
-	<p>A millionaire, I'm a young money millionaire Tougher than Nigerian hair My criteria compared to your career this isn't fair I'm a venereal disease like a menstrual bleed  Through the pencil and leak on the sheet of the tabletIn my mind 'cause I don't write shit, 'cause I ain't got time'cause my seconds, minutes, hours go to the all mighty dollarAnd the all mighty power of that ch, ch, ch, ch chopperSister, brother, son, daughter, father mothafuck a coppaGot the Maserati dancin' on the bridge pussy poppin'Tell the coppers hahahaha you can't catch 'em, you can't stop 'emI go by them goon rules if you can't beat 'em then you pop 'emYou can't man 'em then you mop 'em,You can't stand 'em then you drop 'em,You pop 'em 'cause we pop 'em like Orville Redenbacher!!Motherfucker I'm illA million here, a million thereSicilian bitch with long hairWith coke in the derriereLike smoking the thinnest airI open the Lamborghini hopin' them crackers see meLike look at that bastard weezyHe's a beast, he's a dog, he's a motherfucking problemOK, you're a goon but what's a goon to a goblin?Nothing, nothing -- you ain't scarin' nothingOn some faggot bullshit call him Denise RodmanCall me what you want bitch, call me on my sidekickNever answer when it's private, damn I hate a shy bitchDon't you hate a shy bitch?Yeah I ate a shy bitchShe ain't shy no more, she changed her name to my bitchhahahaha, yeah, nigga that's my bitchSo when she ask for the money, when you through don't be surprised bitchIt ain't trickin' if you got itBut you like a bitch with no ass, you ain't go shit </p>
-	</div>
-</div>
-
-	<div class="row-fluid section">
-		<div class="span5 offset1 copy copy-right">
-		<p> Motherfucker I'm ill, not sickAnd I'm OK but my watch sick, yeah my drop sick, yeah my glock sick and my knot thickIM It!Motherfucker I'm Ill!YeahSee..They say I'm rapping like Big, Jay and Tupac, Andre 3000 where is Erykah Baduh at? Who that?Who that say they're gonna beat Lil' WayneMy name ain't BIC, but I keep that flame manWho that one that do that boy?You all knew thatTrue that swallowAnd I be the shit now you got loose bowelsI don't owe you like two vowelsBut I would like for you to pay me by the hourHa ha, and I'd rather be pushing flowersThan to be in the penn sharing showersHa, Tony told us this world was oursand the Bible told us every girl was sourdon't play in the garden and don't smell her flowercall me Mr. Carter or Mr. Lawn Mowerboy I got so many bitches like I'm Michael Lowryeven Gwen Stefani said she couldn't doubt meMotherfucker I say life ain't shit without meChrome lips poking out the coup look like it's poutingI do what I do and you do what you can do about it BitchI could turn a crack rock into a mountain, dare meDon't you compare me 'cause there ain't nobody near meThey don't see me, but they hear meThey don't feel me, but they fear me.I'm illieC33PHahahaha </p> 
-
-		</div>
-	</div>
-	
-	<div class="row-fluid faq">
-		<div class="span10 offset1">
-		<h3>FAQ</h3>
-			<div class="accordion" id="accordion2">
-				<div class=accordion-goup">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">What doe FAQ stand for?</a>
-					</div>
-					<div id="collapseOne" class="accordion-body collapse">
-						<div class="accordion-inner">Frequently Asked Qestion
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-headin">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> What's a FAQ?></a>
-					</div>
-					<div id="collapseTwo" class="accordion-body collapse">
-						<div class="accordion-inner">
-							A question that is asked by users
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</body>
+      <!-- Not crucial, but we put this under a CC By-SA 3.0 license. -->
+      <!-- http://creativecommons.org/licenses/ -->
+      <div class="row-fluid footer">
+        <div class="span12">
+          <p>This work is licensed under
+            the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC
+              By-SA 3.0
+            </a>, without all the cruft that would otherwise be
+            put at the bottom of the page.</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
-			
-
-
-
 
